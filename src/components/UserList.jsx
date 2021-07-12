@@ -19,11 +19,14 @@ class UserList extends React.Component {
     render() {
         return (
             <div>
-                <button className="btn btn-default" onClick={this.onClick}>Click me</button>
+                <button className="btn btn-secondary" onClick={this.onClick}>Click me to show all users</button>
+                <hr></hr>
                 <div>
                     {
                         this.state.users.length < 1 ? null : this.state.users.map((e) => {
-                            return (<div key={e.id} className="card-body">
+                            return (
+                                <div key={e.id} className="card" style={{width: "30rem"}} >
+                                <div className="card-body">
                                 <h3 className="card-title"> User: {e.name} </h3>
                                 <h4 className="card-subtitle mb-2 text-muted"> User name: {e.username} </h4>
                                 <p className="card-text"> email: {e.email} </p>
@@ -49,8 +52,11 @@ class UserList extends React.Component {
                                         <li> {e.company.catchPhrase} </li>
                                         <li> {e.company.bs} </li>
                                     </ul>
-                                </p>    
-                                </div>);
+                                </p>
+                                </div> 
+                                <hr /> 
+                                </div>
+                                );
                         }) 
                     }
                 </div>
